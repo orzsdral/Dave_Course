@@ -13,7 +13,7 @@ if (mysqli_connect_error()){
     exit;
 }
 
-$sql = "SELECT * FROM article  WHERE id = 1 ;";
+$sql = "SELECT * FROM article  WHERE id = ".$_GET['id'];
 
 $results = mysqli_query($conn, $sql);
 
