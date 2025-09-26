@@ -1,6 +1,6 @@
 <?php 
 
-require_once "database.php";
+require_once "inc/database.php";
 
 $sql = "SELECT * FROM article  ORDER BY published_at ;";
 
@@ -13,7 +13,7 @@ if ($results === false){
 }
 ?>
 
-<?php require_once "header.php"; ?>
+<?php require_once "inc/header.php"; ?>
 
         <?php if (empty($articles)): ?>
             <p>No articels found.</p>
@@ -31,4 +31,4 @@ if ($results === false){
             </ul>
 
         <?php endif; ?>
-<?php require_once "footer.php"; ?>
+<?php require_once "inc/footer.php"; ?>

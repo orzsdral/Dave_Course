@@ -1,6 +1,6 @@
 <?php 
 
-require_once "database.php";
+require_once "inc/database.php";
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])){
 
@@ -20,7 +20,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])){
 
 ?>
 
-<?php require_once "header.php"; ?>
+<?php require_once "inc/header.php"; ?>
         <?php if ($article === null): ?>
             <p>Article not found.</p>
         <?php else : ?>
@@ -33,4 +33,4 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])){
                     </li>
             </ul>
         <?php endif; ?>
-<?php require_once "footer.php"; ?>
+<?php require_once "inc/footer.php"; ?>
