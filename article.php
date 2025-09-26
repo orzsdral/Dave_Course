@@ -1,17 +1,6 @@
 <?php 
 
-//Connect DB info 
-$db_host = "localhost";
-$db_name = "cms";
-$db_user = "Anthony";
-$db_pass = "qaz1";
-
-$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-
-if (mysqli_connect_error()){
-    echo mysqli_connect_error();
-    exit;
-}
+require_once "database.php";
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])){
 
@@ -31,18 +20,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])){
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>My blog</title>
-</head>
-<body>
-    <header>
-        <h1>My blog</h1>
-    </header>
-
-    <main>
+<?php require_once "header.php"; ?>
         <?php if ($article === null): ?>
             <p>Article not found.</p>
         <?php else : ?>
@@ -55,6 +33,4 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])){
                     </li>
             </ul>
         <?php endif; ?>
-    </main>
-</body>
-</html>
+<?php require_once "footer.php"; ?>
